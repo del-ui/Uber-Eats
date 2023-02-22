@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "blank",
-    "slug": "blank",
+    "name": "Uber-Eats",
+    "slug": "Uber-Eats",
     "version": "1.0.0",
     "platforms": [
       "ios",
