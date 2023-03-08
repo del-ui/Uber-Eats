@@ -17,7 +17,7 @@ export default function SearchBar() {
           borderRadius: 40,
           fontWeight: "700",
           marginTop: 7,
-          borderStyle: "none"
+          
         },
         textInputContainer: {
           backgroundColor: '#eee',

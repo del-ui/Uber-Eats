@@ -7,6 +7,14 @@
       "ios",
       "android",
       "web"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "5f5dfc22-c252-4442-92ea-42c95e44de76"
+      }
+    },
+    "android": {
+      "package": "com.keedr.UberEats"
+    }
   }
 }
