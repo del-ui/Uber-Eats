@@ -4,17 +4,8 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 
 export default function SearchBar() {
   return (
-    <View style={{marginTop: 15, flexDirection: 'row'}}>
-      <GooglePlacesAutocomplete 
-      placeholder='Search'
-      styles={{
-        textInput: {
-          backgroundColor: "#eee",
-          borderRadius: 20,
-          fontWeight: "700",
-          marginTop: 7
-        }
-      }}/>
+    <View>
+      
     </View>
   )
 }
