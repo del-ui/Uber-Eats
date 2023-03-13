@@ -6,7 +6,7 @@ import Categories from '../components/Categories';
 import RestaurantItems, { localRestaurants } from '../components/RestaurantItems';
 
 
-const YELP_API_KEY = "fsq3hZlANP46yxsFmRdbZD8Muh+mMj2BO3eEFBWFaA8WGno="
+const YELP_API_KEY = 'D6jn_NFmhROZ9H9ApvpszHM-UM91I2RVqsDElkcDOtShZvnPyaPK-G-dCJrUPJH8H1NVZzR68jNZI8lL1a3zqvJHLgTnztV310Mr3Ms5-rl2iLmkItKjqDniMw4PZHYx';
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = React.useState(localRestaurants);
@@ -20,7 +20,7 @@ export default function Home() {
       },
     };
 
-  return fetch(yelpUrl, apiOptions)
+   fetch(yelpUrl, apiOptions)
       .then((res) => res.json())
       .then((json) => {
         setRestaurantData(json.businesses);
