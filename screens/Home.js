@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView } from 'react-native'
+import { View, SafeAreaView, ScrollView } from 'react-native'
 import React, { useEffect } from 'react'
 import HeaderTabs from '../components/HeaderTabs'
 import SearchBar from '../components/SearchBar';
@@ -12,23 +12,27 @@ export default function Home() {
   const [restaurantData, setRestaurantData] = React.useState(localRestaurants);
 
   const getRestaurantFromYelp = () => {
-    const yelpUrl = 'https://api.yelp.com/v3/businesses/search?term=restaurants&location=San+Francisco';
+      const yelpUrl = 
+      'https://api.yelp.com/v3/businesses/search?term=restaurants&location=SanDiego';
 
-    const apiOptions = {
-      headers: {
-        Authorization: `Bearer ${YELP_API_KEY}`,
-      },
-    };
-
-   fetch(yelpUrl, apiOptions)
-      .then((res) => res.json())
-      .then((json) => {
-        setRestaurantData(json.businesses);
-      });          
+      const apiOptions = {
+        headers: {
+          Authorization: `Bearer ${YELP_API_KEY}`,
+        },
+      };
+        return fetch(yelpUrl, apiOptions)
+        .then((response) => response.json())
+        .then(json => setRestaurantData(json.businesses));
+      
   };
-  useEffect(()=> {
+
+  useEffect(() => {
     getRestaurantFromYelp();
-  } , []);
+  }, []);
+  
+
+  
+
   
   return (
     <SafeAreaView style={{backgroundColor: "#eee", flex: 1}}>
