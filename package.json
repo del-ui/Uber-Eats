@@ -20,5 +20,6 @@
   },
   "version": "1.0.0",
   "private": true,
-  "name": "uber-eats"
+  "name": "uber-eats",
+  "proxy": "http://localhost:19006"
 }
