@@ -10,10 +10,11 @@ const YELP_API_KEY = 'D6jn_NFmhROZ9H9ApvpszHM-UM91I2RVqsDElkcDOtShZvnPyaPK-G-dCJ
 
 export default function Home() {
   const [restaurantData, setRestaurantData] = useState(localRestaurants);
+  const [city, setCity] = useState('San Diego');
 
   const getRestaurantFromYelp = () => {
       const yelpUrl = 
-      'https://api.yelp.com/v3/businesses/search?term=restaurants&location=SanDiego';
+      `https://api.yelp.com/v3/businesses/search?term=restaurants&location=$[city]`;
 
       const apiOptions = {
         headers: {
@@ -28,7 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     getRestaurantFromYelp();
-  }, []);
+  }, [city]);
   
 
   
@@ -45,7 +46,10 @@ export default function Home() {
     <ScrollView showsVerticalScrollIndicator={false}>
 
     <Categories />
-    <RestaurantItems restaurantData={restaurantData} />
+    <RestaurantItems 
+    restaurantData={restaurantData} 
+    cityHandler={setCity} 
+    />
    
 
     </ScrollView>
